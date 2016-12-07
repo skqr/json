@@ -6,7 +6,8 @@ engines:
         php:
 
 ratings:
-  - *.php
+  paths:
+    - "*.php"
 
 exclude_paths:
   - vendor

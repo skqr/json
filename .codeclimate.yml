@@ -1,4 +1,12 @@
-PHP: true
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+        php:
+
+ratings:
+  - *.php
 
 exclude_paths:
   - vendor

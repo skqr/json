@@ -8,6 +8,9 @@
 # Travis CI
 !.travis.yml
 
+# Code Climate
+!.codeclimate.yml
+
 # Composer
 composer.phar
 composer.lock

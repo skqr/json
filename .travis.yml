@@ -11,10 +11,10 @@ php:
 
 addons:
   code_climate:
-    repo_token: 292a00e2f5cb75b3c35254f42c549690071404e7ffa415746b00beda15b1ddab
+    repo_token: 87ffa2288ce3194a10f8d09c8a321af0911f7f8958ccb1a40d5bb8710eb93380
 
 before_script:
-  - composer install
+  - composer install --dev
 
 script: phpunit --coverage-clover build/logs/clover.xml
 

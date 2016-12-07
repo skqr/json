@@ -4,10 +4,16 @@ engines:
     config:
       languages:
         php:
+  fixme:
+    enabled: true
+  phpcodesniffer:
+    enabled: true
+  phpmd:
+    enabled: true
 
 ratings:
   paths:
-    - "*.php"
+    - "**.php"
 
 exclude_paths:
   - vendor

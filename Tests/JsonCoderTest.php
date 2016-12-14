@@ -49,4 +49,39 @@ JSON;
         $expected = (object) ['some_key' => "This is so a test."];
         $this->assertEquals($expected, $actual);
     }
+
+    public function testMatchingSchemaAgainstString()
+    {
+        /* Given... (Fixture) */
+        $coder = new JsonCoder;
+        $schema = (object) [
+            "type" => "object",
+            "properties" => [
+                "some_key" => ["type" => "string"],
+            ],
+            "required" => ["some_key"]
+        ];
+        /* When... (Action) */
+        $actual = $coder->matchSchema(self::JSON_SIMPLE_SAMPLE, $schema);
+        /* Then... (Assertions) */
+        $this->assertTrue($actual);
+    }
+
+    public function testMatchingSchemaAgainstObject()
+    {
+        /* Given... (Fixture) */
+        $coder = new JsonCoder;
+        $schema = (object) [
+            "type" => "object",
+            "properties" => [
+                "some_key" => ["type" => "string"],
+            ],
+            "required" => ["some_key"]
+        ];
+        /* When... (Action) */
+        $json = (object) ['some_key' => "This is so a test."];
+        $actual = $coder->matchSchema($json, $schema);
+        /* Then... (Assertions) */
+        $this->assertTrue($actual);
+    }
 }
